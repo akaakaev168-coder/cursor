@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07080d" />
+  <meta name="description" content="Aether is the neural layer for your editor. It writes, reviews, and answers across the repo — priced per seat, live as you drag." />
+  <title>Aether — code at the speed of thought</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="pointer-glow" aria-hidden="true"></div>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#product" aria-label="Aether">
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <circle cx="16" cy="16" r="10" fill="none" stroke="url(#lg)" stroke-width="2"></circle>
+          <circle cx="16" cy="6" r="2.2" fill="#5cffc1"></circle>
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#5cffc1" />
+              <stop offset="1" stop-color="#9b8cff" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>AETHER</span>
+      </a>
+
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <a href="#product" data-i18n="nav.product">Product</a>
+        <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+
+      <div class="nav-tools">
+        <div class="langs" id="lang-switch" role="group">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+          <button type="button" data-lang="tj" aria-pressed="false">TJ</button>
+        </div>
+        <a class="btn btn-primary btn-sm" href="#beta"><span data-i18n="nav.cta">Get Aether</span></a>
+        <button type="button" id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="burger" aria-hidden="true"></span>
+          <span class="sr-only" data-i18n="nav.menu">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="product">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker"><span class="pulse" aria-hidden="true"></span><span data-i18n="hero.kicker">Public beta · v2.6</span></p>
+          <h1>
+            <span data-i18n="hero.t1">Ship software</span>
+            <span class="grad" data-i18n="hero.t2">at the speed of thought.</span>
+          </h1>
+          <p class="lead" data-i18n="hero.lead">Aether is the neural layer inside your editor. It writes code, reviews the diff, and answers across the whole repo — without pulling you out of flow.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#pricing"><span data-i18n="hero.primary">See live pricing</span></a>
+            <a class="btn btn-ghost" href="#demo"><span data-i18n="hero.secondary">Try the demo</span></a>
+          </div>
+          <p class="cmd"><kbd>Ctrl</kbd><kbd>K</kbd><span data-i18n="hero.cmd">Ask Aether to price 8 Studio seats</span></p>
+          <dl class="stats">
+            <div>
+              <dt data-i18n="hero.s1">48ms</dt>
+              <dd data-i18n="hero.s1l">median completion</dd>
+            </div>
+            <div>
+              <dt data-i18n="hero.s2">70+</dt>
+              <dd data-i18n="hero.s2l">languages</dd>
+            </div>
+            <div>
+              <dt data-i18n="hero.s3">2 mo</dt>
+              <dd data-i18n="hero.s3l">free on yearly</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="term-frame" id="demo">
+          <div class="term">
+            <div class="term-bar">
+              <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="term-file" id="term-file">src/auth/session.ts</span>
+              <span class="term-ai">AETHER</span>
+            </div>
+            <div class="term-body" aria-live="off">
+              <ol class="term-lines" id="term-lines"></ol>
+            </div>
+            <div class="term-progress" aria-hidden="true"><span id="term-bar"></span></div>
+            <div class="term-foot">
+              <p id="term-status" class="term-status"></p>
+              <button type="button" id="term-play" class="text-btn"></button>
+            </div>
+            <p class="prompt-label" data-i18n="hero.ask">Or pick a prompt</p>
+            <div id="prompts" class="chips" role="group"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>TypeScript</span><span>Python</span><span>Rust</span><span>Go</span><span>Java</span><span>Kotlin</span><span>Swift</span><span>C++</span><span>SQL</span><span>React</span><span>Vue</span><span>Svelte</span><span>Next.js</span><span>Django</span>
+        </div>
+        <div class="marquee-group">
+          <span>TypeScript</span><span>Python</span><span>Rust</span><span>Go</span><span>Java</span><span>Kotlin</span><span>Swift</span><span>C++</span><span>SQL</span><span>React</span><span>Vue</span><span>Svelte</span><span>Next.js</span><span>Django</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="pricing">
+      <div class="container price-layout">
+        <div class="price-copy">
+          <p class="eyebrow" data-i18n="price.kicker">01 — Pricing</p>
+          <h2 data-i18n="price.title">A price that scales with the team.</h2>
+          <p class="lead" data-i18n="price.lead">Flip the billing toggle and drag the seat slider. The total, the per-user rate, and the volume tier recalculate on the spot.</p>
+        </div>
+
+        <div class="price-controls">
+          <div class="bill">
+            <button type="button" id="pick-month" class="bill-opt is-on"><span data-i18n="bill.month">Monthly</span></button>
+            <button type="button" id="bill-switch" class="switch" role="switch" aria-checked="false" data-i18n-aria="bill.aria"></button>
+            <button type="button" id="pick-year" class="bill-opt">
+              <span data-i18n="bill.year">Yearly</span>
+              <em class="save-chip" data-i18n="bill.save">2 months free</em>
+            </button>
+          </div>
+
+          <div class="seat-head">
+            <label id="seats-label" for="seats" data-i18n="seats.label">Users</label>
+            <div class="stepper">
+              <button type="button" id="seat-dec" data-i18n-aria="seats.dec">−</button>
+              <input id="seat-num" type="number" min="1" max="80" value="8" inputmode="numeric" aria-labelledby="seats-label" />
+              <button type="button" id="seat-inc" data-i18n-aria="seats.inc">+</button>
+            </div>
+          </div>
+
+          <input id="seats" class="slider" type="range" min="1" max="80" value="8" aria-labelledby="seats-label" />
+          <div class="scale" aria-hidden="true"><span>1</span><span>20</span><span>40</span><span>60</span><span>80</span></div>
+
+          <div class="tiers" role="group">
+            <button type="button" class="tier" data-pick="1" data-min="1" data-max="4">
+              <strong data-i18n="tier.signal">Signal</strong>
+              <small data-i18n="tier.d1">1–4 · list price</small>
+            </button>
+            <button type="button" class="tier" data-pick="8" data-min="5" data-max="19">
+              <strong data-i18n="tier.studio">Studio</strong>
+              <small data-i18n="tier.d2">5–19 · −10%</small>
+            </button>
+            <button type="button" class="tier" data-pick="24" data-min="20" data-max="49">
+              <strong data-i18n="tier.orbit">Orbit</strong>
+              <small data-i18n="tier.d3">20–49 · −20%</small>
+            </button>
+            <button type="button" class="tier" data-pick="50" data-min="50" data-max="80">
+              <strong data-i18n="tier.constellation">Constellation</strong>
+              <small data-i18n="tier.d4">50–80 · −30%</small>
+            </button>
+          </div>
+          <p class="fine" data-i18n="price.more">Need more than 80 seats? The beta form below reaches a human.</p>
+        </div>
+
+        <aside class="price-card" aria-live="polite">
+          <p class="stamp" id="stamp" hidden data-i18n="price.stamp">Best value</p>
+          <p class="price-kicker" id="price-tier">Studio</p>
+          <p class="price-big" id="price-big">$216</p>
+          <p class="price-per" id="price-per"></p>
+          <p class="price-sub" id="price-sub"></p>
+          <p class="price-save" id="price-save"></p>
+          <dl class="receipt">
+            <div><dt data-i18n="price.lineCadence">Cadence</dt><dd id="r-cadence"></dd></div>
+            <div><dt data-i18n="price.lineSeats">Users</dt><dd id="r-seats"></dd></div>
+            <div><dt data-i18n="price.lineTier">Volume</dt><dd id="r-tier"></dd></div>
+            <div><dt data-i18n="price.lineSeat">Per user</dt><dd id="r-seat"></dd></div>
+            <div class="due"><dt data-i18n="price.lineDue">Due today</dt><dd id="r-due"></dd></div>
+          </dl>
+          <a class="btn btn-primary btn-block" href="#beta"><span data-i18n="price.cta">Start with this plan</span></a>
+          <p class="fine" data-i18n="price.note">USD. Taxes extra. This preview does not charge a card.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <p class="eyebrow" data-i18n="feat.kicker">02 — Product</p>
+        <h2 data-i18n="feat.title">One copilot. Four powers.</h2>
+        <p class="lead feat-lead" data-i18n="feat.lead">Each tab swaps the product surface — completion, agent, review, and repo chat.</p>
+
+        <div class="features-layout">
+          <div class="tablist" role="tablist" aria-orientation="vertical">
+            <button type="button" class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" tabindex="0">
+              <span class="tab-id">01</span>
+              <span><strong data-i18n="feat.t1">Ghostwrite</strong><small data-i18n="feat.t1d">Inline completion that knows the repo.</small></span>
+            </button>
+            <button type="button" class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">
+              <span class="tab-id">02</span>
+              <span><strong data-i18n="feat.t2">Agent</strong><small data-i18n="feat.t2d">Plans the change, runs tests, opens the PR.</small></span>
+            </button>
+            <button type="button" class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">
+              <span class="tab-id">03</span>
+              <span><strong data-i18n="feat.t3">Review</strong><small data-i18n="feat.t3d">A diff that explains the why.</small></span>
+            </button>
+            <button type="button" class="tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">
+              <span class="tab-id">04</span>
+              <span><strong data-i18n="feat.t4">Ask</strong><small data-i18n="feat.t4d">Highlight code. Ask the repo.</small></span>
+            </button>
+          </div>
+
+          <div class="panels">
+            <div class="panel is-in" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+              <article class="shot">
+                <header class="shot-bar"><span>src/billing/quote.ts</span><span class="shot-tag" data-i18n="shot.suggest">Suggestion</span></header>
+                <div class="shot-code">
+                  <div><span class="ln">1</span>import { seatPrice } from "./billing";</div>
+                  <div><span class="ln">2</span></div>
+                  <div><span class="ln">3</span>export function quote(seats: number, yearly: boolean) {</div>
+                  <div class="ghost"><span class="ln">4</span>  const perSeat = seatPrice(seats, yearly);</div>
+                  <div class="ghost"><span class="ln">5</span>  return { perSeat, total: perSeat * seats };</div>
+                  <div><span class="ln">6</span>}</div>
+                </div>
+                <footer class="shot-foot"><kbd>Tab</kbd><span data-i18n="shot.accept">accept</span><kbd>Esc</kbd><span data-i18n="shot.reject">dismiss</span></footer>
+              </article>
+              <p class="shot-cap" data-i18n="feat.c1">Dimmed lines are Aether’s guess. Tab commits them into the file.</p>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+              <article class="shot">
+                <header class="shot-bar"><span data-i18n="agent.title">Agent · volume pricing</span><span class="shot-tag" data-i18n="agent.run">Running</span></header>
+                <ol class="steps">
+                  <li class="step"><span class="dot"></span><div><strong data-i18n="agent.s1">Read src/billing/seats.ts</strong><em data-i18n="agent.st1">Done</em></div></li>
+                  <li class="step"><span class="dot"></span><div><strong data-i18n="agent.s2">Patch Studio, Orbit, Constellation tiers</strong><em data-i18n="agent.st2">Done</em></div></li>
+                  <li class="step"><span class="dot"></span><div><strong data-i18n="agent.s3">Run vitest billing.spec.ts</strong><em data-i18n="agent.st3">Running</em></div></li>
+                  <li class="step"><span class="dot"></span><div><strong data-i18n="agent.s4">Open PR “Exact cents for yearly Studio”</strong><em data-i18n="agent.st4">Queued</em></div></li>
+                </ol>
+              </article>
+              <p class="shot-cap" data-i18n="feat.c2">The agent stays in the repo. You approve the PR, you don’t babysit the shell.</p>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+              <article class="shot">
+                <header class="shot-bar"><span>src/billing/price.ts</span><span class="shot-tag" data-i18n="review.tag">Review</span></header>
+                <div class="diff" data-i18n-aria="review.aria">
+                  <div class="diff-line ctx">fn charge(seats: u32, yearly: bool) -&gt; f64 {</div>
+                  <div class="diff-line del">-    30.0 * seats as f64</div>
+                  <div class="diff-line add">+    seat_price(seats, yearly) * seats as f64</div>
+                  <div class="diff-line ctx">}</div>
+                </div>
+                <p class="why"><strong data-i18n="review.whyLabel">Why</strong> <span data-i18n="review.why">Yearly is $25 and volume stacks after that. Multiplying the list price skipped both.</span></p>
+              </article>
+              <p class="shot-cap" data-i18n="feat.c3">Green is the fix. The note underneath is the reasoning, not a wall of warnings.</p>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+              <article class="shot chat">
+                <header class="shot-bar"><span data-i18n="chat.title">Ask · billing.ts</span><span class="shot-tag">AETHER</span></header>
+                <div class="bubble me" data-i18n="chat.u">Does yearly apply before the volume tier?</div>
+                <div class="bubble ai" data-i18n="chat.a">Volume first. Studio (5–19) takes 10% off $30 → $27, then yearly locks $22.50. Eight seats bill $180/mo, $2,160 for the year.</div>
+              </article>
+              <p class="shot-cap" data-i18n="feat.c4">Answers cite the function you highlighted, so the number matches the receipt on this page.</p>
+            </div>
+          </div>
+        </div>
+
+        <ul class="sec-row">
+          <li data-i18n="sec.1">Private repos excluded from training</li>
+          <li data-i18n="sec.2">SSO and audit log</li>
+          <li data-i18n="sec.3">SOC 2 Type II</li>
+          <li data-i18n="sec.4">VPC deploy on Constellation</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div>
+          <p class="eyebrow" data-i18n="faq.kicker">03 — FAQ</p>
+          <h2 data-i18n="faq.title">Questions teams actually ask.</h2>
+          <p class="lead" data-i18n="faq.lead">Billing, editors, and what never leaves your machine.</p>
+        </div>
+        <div class="acc" id="faq-list">
+          <div class="acc-item is-open">
+            <h3><button type="button" class="acc-btn" aria-expanded="true" id="q1"><span data-i18n="faq.q1">Does Aether train on private code?</span><i aria-hidden="true"></i></button></h3>
+            <div class="acc-panel" role="region" aria-labelledby="q1"><div class="acc-inner"><p data-i18n="faq.a1">No. Private repositories are excluded from training. Completions run in an isolated context and are not used to update the base model.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-btn" aria-expanded="false" id="q2"><span data-i18n="faq.q2">Which editors are supported?</span><i aria-hidden="true"></i></button></h3>
+            <div class="acc-panel" role="region" aria-labelledby="q2"><div class="acc-inner"><p data-i18n="faq.a2">VS Code, JetBrains IDEs, and Neovim today. A web companion ships with the beta so you can try Aether before installing anything.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-btn" aria-expanded="false" id="q3"><span data-i18n="faq.q3">How does yearly billing work?</span><i aria-hidden="true"></i></button></h3>
+            <div class="acc-panel" role="region" aria-labelledby="q3"><div class="acc-inner"><p data-i18n="faq.a3">You pay for 10 months and use Aether for 12 — $25 instead of $30 per user, before volume. Studio takes another 10% off, Orbit 20%, Constellation 30%. The calculator on this page is the same formula.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-btn" aria-expanded="false" id="q4"><span data-i18n="faq.q4">What if the team changes size?</span><i aria-hidden="true"></i></button></h3>
+            <div class="acc-panel" role="region" aria-labelledby="q4"><div class="acc-inner"><p data-i18n="faq.a4">Add or remove seats any day. Monthly plans prorate immediately. Yearly plans credit the unused time back to the workspace balance.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-btn" aria-expanded="false" id="q5"><span data-i18n="faq.q5">Which languages can it write?</span><i aria-hidden="true"></i></button></h3>
+            <div class="acc-panel" role="region" aria-labelledby="q5"><div class="acc-inner"><p data-i18n="faq.a5">More than 70, including TypeScript, Python, Rust, Go, Java, Kotlin, Swift, SQL, and C++. Prompts are layout-aware: they read the repo you already have open.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-btn" aria-expanded="false" id="q6"><span data-i18n="faq.q6">Can I cancel?</span><i aria-hidden="true"></i></button></h3>
+            <div class="acc-panel" role="region" aria-labelledby="q6"><div class="acc-inner"><p data-i18n="faq.a6">Monthly plans cancel in one click. Yearly plans stay active until the term ends, and you can turn renewal off whenever you want.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <h3><button type="button" class="acc-btn" aria-expanded="false" id="q7"><span data-i18n="faq.q7">Is there an on-prem version?</span><i aria-hidden="true"></i></button></h3>
+            <div class="acc-panel" role="region" aria-labelledby="q7"><div class="acc-inner"><p data-i18n="faq.a7">Constellation includes SSO, audit logs, and a VPC deployment. Private networking is available when you write in through the beta form.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta" id="beta">
+      <div class="container">
+        <div class="cta-panel">
+          <p class="eyebrow" data-i18n="beta.kicker">Beta</p>
+          <h2 data-i18n="beta.title">Put Aether in the editor tonight.</h2>
+          <p class="lead" data-i18n="beta.lead">Leave a work email. This preview stores it only in your browser — nothing is sent to a server.</p>
+          <form id="beta-form" class="beta-form" novalidate>
+            <label class="sr-only" for="email" data-i18n="beta.emailLabel">Work email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required data-i18n-placeholder="beta.ph" placeholder="you@company.com" />
+            <button class="btn btn-primary" type="submit"><span data-i18n="beta.btn">Request access</span></button>
+          </form>
+          <p id="form-msg" class="form-msg" hidden></p>
+          <button type="button" id="form-reset" class="text-btn" hidden data-i18n="beta.reset">Use a different email</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot-grid">
+      <div>
+        <a class="logo" href="#product"><span>AETHER</span></a>
+        <p class="fine" data-i18n="foot.note">Aether is a product preview. The calculator, demo, and beta form all run locally in your browser.</p>
+      </div>
+      <div>
+        <p class="foot-label" data-i18n="foot.product">Product</p>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+        <a href="#demo" data-i18n="hero.secondary">Try the demo</a>
+      </div>
+      <div>
+        <p class="foot-label" data-i18n="foot.help">Help</p>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#beta" data-i18n="nav.cta">Get Aether</a>
+      </div>
+      <p class="fine foot-copy" data-i18n="foot.rights">© 2026 Aether Labs. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
