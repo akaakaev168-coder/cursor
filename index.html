@@ -36,6 +36,7 @@
         <a href="#product" data-i18n="nav.product">Product</a>
         <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
         <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#agent" data-i18n="nav.agent">Agent</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
       </nav>
 
@@ -68,7 +69,7 @@
             <a class="btn btn-primary" href="#pricing"><span data-i18n="hero.primary">See live pricing</span></a>
             <a class="btn btn-ghost" href="#demo"><span data-i18n="hero.secondary">Try the demo</span></a>
           </div>
-          <p class="cmd"><kbd>Ctrl</kbd><kbd>K</kbd><span data-i18n="hero.cmd">Ask Aether to price 8 Studio seats</span></p>
+          <p class="cmd"><kbd>Ctrl</kbd><kbd>K</kbd><button type="button" class="cmd-ask" data-ask-key="q1" data-i18n="hero.cmd">Ask Aether to price 8 Studio seats</button></p>
           <dl class="stats">
             <div>
               <dt data-i18n="hero.s1">48ms</dt>
@@ -319,6 +320,41 @@
       </div>
     </section>
 
+    <section class="section" id="agent">
+      <div class="container agent-layout">
+        <div class="agent-copy">
+          <p class="eyebrow" data-i18n="agent.kicker">04 — Agent</p>
+          <h2 data-i18n="agent.headline">An agent that edits the page.</h2>
+          <p class="lead" data-i18n="agent.lead">Ask it to price a team or draft a function. It runs in this browser and moves the calculator itself.</p>
+          <div class="agent-picks">
+            <button type="button" class="chip" data-ask-key="q1" data-i18n="agent.q1">Price 8 seats yearly</button>
+            <button type="button" class="chip" data-ask-key="q2" data-i18n="agent.q2">Write a debounce</button>
+            <button type="button" class="chip" data-ask-key="q3" data-i18n="agent.q3">Which editors?</button>
+          </div>
+        </div>
+
+        <div class="agent-dock" id="agent-dock">
+          <div class="agent-head">
+            <span class="pulse" aria-hidden="true"></span>
+            <strong data-i18n="agent.name">Aether Agent</strong>
+            <span class="agent-mode" data-i18n="agent.mode">Local</span>
+          </div>
+          <div id="agent-log" class="agent-log" aria-live="polite"></div>
+          <div id="agent-suggest" class="suggest"></div>
+          <form id="agent-form" class="agent-form">
+            <label class="sr-only" for="agent-input" data-i18n="agent.label">Message the agent</label>
+            <input id="agent-input" name="message" maxlength="240" autocomplete="off" data-i18n-placeholder="agent.ph" placeholder="Price 12 seats, or write a hook" />
+            <button class="btn btn-primary" type="submit" id="agent-send"><span data-i18n="agent.send">Send</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <button type="button" id="agent-fab" class="agent-fab" hidden>
+      <span class="pulse" aria-hidden="true"></span>
+      <span data-i18n="nav.agent">Agent</span>
+    </button>
+
     <section class="section cta" id="beta">
       <div class="container">
         <div class="cta-panel">
@@ -348,6 +384,7 @@
         <a href="#features" data-i18n="nav.features">Features</a>
         <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
         <a href="#demo" data-i18n="hero.secondary">Try the demo</a>
+        <a href="#agent" data-i18n="nav.agent">Agent</a>
       </div>
       <div>
         <p class="foot-label" data-i18n="foot.help">Help</p>
