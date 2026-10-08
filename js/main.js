@@ -9,9 +9,23 @@
       "nav.product": "Product",
       "nav.pricing": "Pricing",
       "nav.features": "Features",
+      "nav.agent": "Agent",
       "nav.faq": "FAQ",
       "nav.cta": "Get Aether",
       "nav.menu": "Menu",
+      "agent.kicker": "04 — Agent",
+      "agent.headline": "An agent that edits the page.",
+      "agent.lead": "Ask it to price a team or draft a function. It runs in this browser and moves the calculator itself.",
+      "agent.name": "Aether Agent",
+      "agent.mode": "Local",
+      "agent.label": "Message the agent",
+      "agent.ph": "Price 12 seats, or write a hook",
+      "agent.send": "Send",
+      "agent.copy": "Copy",
+      "agent.copied": "Copied",
+      "agent.q1": "Price 8 seats yearly",
+      "agent.q2": "Write a debounce",
+      "agent.q3": "Which editors?",
       "hero.kicker": "Public beta · v2.6",
       "hero.t1": "Ship software",
       "hero.t2": "at the speed of thought.",
@@ -133,7 +147,7 @@
       "beta.ok": "You’re in. {email} stays in this browser — this preview never sends mail.",
       "beta.err": "Enter a valid email address.",
       "beta.reset": "Use a different email",
-      "foot.note": "Aether is a product preview. The calculator, demo, and beta form all run locally in your browser.",
+      "foot.note": "Aether is a product preview. The calculator, demo, agent, and beta form all run locally in your browser.",
       "foot.product": "Product",
       "foot.help": "Help",
       "foot.rights": "© 2026 Aether Labs. All rights reserved.",
@@ -147,9 +161,23 @@
       "nav.product": "Продукт",
       "nav.pricing": "Цены",
       "nav.features": "Возможности",
+      "nav.agent": "Агент",
       "nav.faq": "Вопросы",
       "nav.cta": "Получить Aether",
       "nav.menu": "Меню",
+      "agent.kicker": "04 — Агент",
+      "agent.headline": "Агент, который меняет страницу.",
+      "agent.lead": "Попросите посчитать команду или набросать функцию. Он работает в этом браузере и сам двигает калькулятор.",
+      "agent.name": "Агент Aether",
+      "agent.mode": "Локально",
+      "agent.label": "Сообщение агенту",
+      "agent.ph": "Посчитай 12 мест или напиши хук",
+      "agent.send": "Отправить",
+      "agent.copy": "Копировать",
+      "agent.copied": "Скопировано",
+      "agent.q1": "8 мест за год",
+      "agent.q2": "Напиши debounce",
+      "agent.q3": "Какие редакторы?",
       "hero.kicker": "Открытая бета · v2.6",
       "hero.t1": "Собирайте софт",
       "hero.t2": "со скоростью мысли.",
@@ -271,7 +299,7 @@
       "beta.ok": "Вы в списке. {email} остаётся в этом браузере — письмо не отправляется.",
       "beta.err": "Введите корректный email.",
       "beta.reset": "Указать другой email",
-      "foot.note": "Aether — превью продукта. Калькулятор, демо и форма беты работают локально в браузере.",
+      "foot.note": "Aether — превью продукта. Калькулятор, демо, агент и форма беты работают локально в браузере.",
       "foot.product": "Продукт",
       "foot.help": "Помощь",
       "foot.rights": "© 2026 Aether Labs. Все права защищены.",
@@ -286,9 +314,23 @@
       "nav.product": "Маҳсулот",
       "nav.pricing": "Нархҳо",
       "nav.features": "Имкониятҳо",
+      "nav.agent": "Агент",
       "nav.faq": "Саволҳо",
       "nav.cta": "Гирифтани Aether",
       "nav.menu": "Меню",
+      "agent.kicker": "04 — Агент",
+      "agent.headline": "Агенте, ки саҳифаро иваз мекунад.",
+      "agent.lead": "Аз ӯ нархи даста ё функсияро пурсед. Вай дар ҳамин браузер кор мекунад ва калкуляторро худаш меҷунбонад.",
+      "agent.name": "Агенти Aether",
+      "agent.mode": "Маҳаллӣ",
+      "agent.label": "Паём ба агент",
+      "agent.ph": "Нархи 12 ҷой, ё хук нависед",
+      "agent.send": "Фиристодан",
+      "agent.copy": "Нусха",
+      "agent.copied": "Нусха шуд",
+      "agent.q1": "8 ҷой солона",
+      "agent.q2": "Дебаунс нависед",
+      "agent.q3": "Кадом муҳаррирҳо?",
       "hero.kicker": "Бетаи оммавӣ · v2.6",
       "hero.t1": "Нармафзор созед",
       "hero.t2": "бо суръати фикр.",
@@ -410,7 +452,7 @@
       "beta.ok": "Шумо дар рӯйхат ҳастед. {email} дар ҳамин браузер мемонад — мактуб фиристода намешавад.",
       "beta.err": "Почтаи дурустро ворид кунед.",
       "beta.reset": "Почтаи дигар",
-      "foot.note": "Aether пешнамоиши маҳсулот аст. Калкулятор, демо ва форми бета дар браузери шумо кор мекунанд.",
+      "foot.note": "Aether пешнамоиши маҳсулот аст. Калкулятор, демо, агент ва форми бета дар браузери шумо кор мекунанд.",
       "foot.product": "Маҳсулот",
       "foot.help": "Кумак",
       "foot.rights": "© 2026 Aether Labs. Ҳамаи ҳуқуқҳо ҳифз шудаанд.",
@@ -572,6 +614,7 @@
     if (statusKey) termStatus.textContent = t(statusKey);
     renderPrompts();
     updatePrice();
+    renderAgentSuggest();
     var saved = storageGet("aether-beta");
     if (saved) showBetaOk(saved);
   }
@@ -908,7 +951,7 @@
       });
     });
   }, { rootMargin: "-45% 0px -50% 0px", threshold: 0.01 });
-  ["product", "pricing", "features", "faq"].forEach(function (id) {
+  ["product", "pricing", "features", "agent", "faq"].forEach(function (id) {
     var el = document.getElementById(id);
     if (el) spy.observe(el);
   });
@@ -938,8 +981,369 @@
     document.getElementById("email").focus();
   });
 
+  var agentLog = document.getElementById("agent-log");
+  var agentInput = document.getElementById("agent-input");
+  var agentSend = document.getElementById("agent-send");
+  var agentBusy = false;
+  var agentVisible = false;
+  var agentGreeted = false;
+
+  var RECIPES = [
+    {
+      test: /debounce|дебаунс/,
+      file: "src/ui/debounce.ts",
+      note: {
+        en: "Debounce: the function runs 200ms after the last call.",
+        ru: "Дебаунс: функция сработает через 200 мс после последнего вызова.",
+        tj: "Дебаунс: функсия 200 мс пас аз охирин даъват иҷро мешавад."
+      },
+      code: "export function debounce(fn, ms = 200) {\n  let timer;\n  return (...args) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn(...args), ms);\n  };\n}"
+    },
+    {
+      test: /throttle|троттл/,
+      file: "src/ui/throttle.ts",
+      note: {
+        en: "Throttle: at most one call per window.",
+        ru: "Троттл: не чаще одного вызова за окно.",
+        tj: "Троттл: на бештар аз як даъват дар равзана."
+      },
+      code: "export function throttle(fn, ms = 200) {\n  let last = 0;\n  return (...args) => {\n    const now = Date.now();\n    if (now - last < ms) return;\n    last = now;\n    return fn(...args);\n  };\n}"
+    },
+    {
+      test: /hook|хук|хуки/,
+      file: "src/ui/useSeats.ts",
+      note: {
+        en: "A hook that keeps seats and the yearly total together.",
+        ru: "Хук, который держит места и годовую сумму вместе.",
+        tj: "Хуке, ки ҷойҳо ва маблағи солонаро якҷоя нигоҳ медорад."
+      },
+      code: "import { useMemo, useState } from \"react\";\n\nexport function useSeats(initial = 8) {\n  const [seats, setSeats] = useState(initial);\n  const [yearly, setYearly] = useState(true);\n  const total = useMemo(() => seatPrice(seats, yearly) * seats, [seats, yearly]);\n  return { seats, setSeats, yearly, setYearly, total };\n}"
+    },
+    {
+      test: /sql|select|postgres|ҷадвал/,
+      file: "db/seats.sql",
+      note: {
+        en: "Seats by tier, only active memberships.",
+        ru: "Места по тарифу, только активные участники.",
+        tj: "Ҷойҳо аз рӯи сатҳ, танҳо иштирокчиёни фаъол."
+      },
+      code: "select tier, count(*) as seats\nfrom memberships\nwhere active\ngroup by tier\norder by seats desc;"
+    },
+    {
+      test: /fetch|запрос|дархост|api/,
+      file: "src/api/client.ts",
+      note: {
+        en: "A small JSON client that fails loud on a bad status.",
+        ru: "Небольшой JSON-клиент: плохой статус — сразу ошибка.",
+        tj: "Мизоҷи хурди JSON: ҳолати бад фавран хато медиҳад."
+      },
+      code: "export async function getJSON(url) {\n  const res = await fetch(url);\n  if (!res.ok) throw new Error(String(res.status));\n  return res.json();\n}"
+    },
+    {
+      test: /auth|session|сесс|токен|санҷиш/,
+      file: "src/auth/session.ts",
+      note: {
+        en: "Session guard: no bearer token, no entry.",
+        ru: "Страж сессии: нет bearer-токена — нет входа.",
+        tj: "Посбони сессия: бе токени bearer даромад нест."
+      },
+      code: "export async function requireSession(req) {\n  const header = req.headers.get(\"authorization\") || \"\";\n  const token = header.replace(/^Bearer\\s+/i, \"\");\n  if (!token) throw new Error(\"missing_token\");\n  return verify(token);\n}"
+    }
+  ];
+
+  function norm(text) {
+    return String(text || "").toLowerCase().replace(/ё/g, "е");
+  }
+
+  function findSeats(text) {
+    var match = String(text).match(/\d{1,3}/g) || [];
+    var i;
+    for (i = 0; i < match.length; i += 1) {
+      var n = Number(match[i]);
+      if (n >= 1 && n <= 80) return n;
+    }
+    return null;
+  }
+
+  function tierPick(text) {
+    if (/constellation/.test(text)) return 50;
+    if (/orbit/.test(text)) return 24;
+    if (/studio/.test(text)) return 8;
+    if (/signal/.test(text)) return 1;
+    return null;
+  }
+
+  function stepsFor(kind) {
+    if (kind === "price") {
+      if (lang === "ru") return ["Читаю размер команды", "Считаю тариф и период", "Обновляю калькулятор"];
+      if (lang === "tj") return ["Андозаи дастаро мехонам", "Сатҳ ва давраро ҳисоб мекунам", "Калкуляторро нав мекунам"];
+      return ["Read the team size", "Apply tier and cadence", "Update the calculator"];
+    }
+    if (kind === "code") {
+      if (lang === "ru") return ["Читаю запрос", "Сверяю со стилем репозитория", "Пишу функцию"];
+      if (lang === "tj") return ["Дархостро мехонам", "Бо услуби репо муқоиса мекунам", "Функсияро менависам"];
+      return ["Read the request", "Match the repo style", "Write the function"];
+    }
+    if (lang === "ru") return ["Ищу в заметках продукта", "Отвечаю"];
+    if (lang === "tj") return ["Дар қайдҳои маҳсулот меҷӯям", "Ҷавоб медиҳам"];
+    return ["Search the product notes", "Answer"];
+  }
+
+  function priceSentence(seats, year, q) {
+    var off = Math.round((1 - q.tier.mult) * 100);
+    var tier = t(q.tier.name) + (off ? " (−" + off + "%)" : "");
+    var per = money(q.per);
+    var month = money(q.month);
+    var due = money(q.due);
+    var save = money(q.save);
+    if (lang === "ru") {
+      return "Калькулятор обновлён: " + seatsWord(seats) + ", " + (year ? "за год" : "помесячно") + ", тариф " + tier + ".\n" +
+        per + " за человека, " + month + " в месяц." +
+        (year ? "\nК оплате " + due + ". Экономия " + save + " против помесячной оплаты." : "\nНа годе экономия составит " + save + ".");
+    }
+    if (lang === "tj") {
+      return "Калкулятор нав шуд: " + seatsWord(seats) + ", " + (year ? "солона" : "ҳармоҳа") + ", сатҳи " + tier + ".\n" +
+        per + " барои як кас, " + month + " дар моҳ." +
+        (year ? "\nИмрӯз " + due + ". Сарфа " + save + "." : "\nДар солона сарфа " + save + " мешавад.");
+    }
+    return "Calculator updated: " + seatsWord(seats) + ", " + (year ? "yearly" : "monthly") + ", " + tier + ".\n" +
+      per + " per user, " + month + " per month." +
+      (year ? "\nDue today " + due + ". You save " + save + " versus monthly." : "\nOn yearly you would save " + save + ".");
+  }
+
+  function matchNote(text) {
+    var notes = [
+      { test: /editor|vscode|vs code|neovim|jetbrains|муҳаррир|редактор/, key: "faq.a2" },
+      { test: /train|обучен|приватн|хусус|base model|модел/, key: "faq.a1" },
+      { test: /cancel|отмен|бекор/, key: "faq.a6" },
+      { test: /on-?prem|vpc|контур|шабака/, key: "faq.a7" },
+      { test: /language|язык|забон/, key: "faq.a5" },
+      { test: /year|yearly|за год|солон|billing|оплат|пардохт|billing/, key: "faq.a3" }
+    ];
+    var i;
+    for (i = 0; i < notes.length; i += 1) {
+      if (notes[i].test.test(text)) return notes[i].key;
+    }
+    return "";
+  }
+
+  function genericCode(text) {
+    var words = norm(text).match(/[a-z]{3,}/g) || [];
+    var skip = { write: 1, function: 1, code: 1, please: 1, make: 1, the: 1, and: 1, for: 1, with: 1 };
+    var kept = words.filter(function (word) { return !skip[word]; }).slice(0, 2);
+    var name = kept.join("_") || "run";
+    var comment = text.replace(/\s+/g, " ").slice(0, 90);
+    return {
+      file: "src/" + name + ".ts",
+      note: {
+        en: "A first draft from your sentence. Rename it to match the file you have open.",
+        ru: "Черновик по вашей фразе. Переименуйте под открытый файл.",
+        tj: "Сиёҳнавис аз ҷумлаи шумо. Номашро ба файли кушода монанд кунед."
+      },
+      code: "// " + comment + "\nexport function " + name + "(input: string) {\n  const value = input.trim();\n  if (!value) throw new Error(\"empty\");\n  return value;\n}"
+    };
+  }
+
+  function buildAnswer(raw) {
+    var text = norm(raw);
+    var how = /how|what|why|как |чӣ тавр|чаро|оё |можно ли|does /.test(text);
+    if (/^(hi|hello|hey|привет|салом|ассалом|здравств)/.test(text) && text.length < 32) {
+      var hello = lang === "ru"
+        ? "Я локальный агент Aether. Могу посчитать места, написать функцию или ответить про редакторы и оплату."
+        : lang === "tj"
+          ? "Ман агенти маҳаллии Aether ҳастам. Метавонам нарх, функсия ё муҳарриру пардохтро гӯям."
+          : "I’m the local Aether agent. I can price seats, write a function, or explain editors and billing.";
+      return { kind: "note", parts: [{ type: "text", text: hello }] };
+    }
+    if (how) {
+      var key = matchNote(text);
+      if (key && !/seat|мест|ҷой|пользовател|истифода|\d/.test(text)) {
+        return { kind: "note", parts: [{ type: "text", text: t(key) }] };
+      }
+    }
+    var priceHit = /price|cost|сколько|нарх|тариф|калькул|ҳисоб|seat|мест|ҷой|пользовател|истифода|скидк|посчит|studio|orbit|constellation|signal/.test(text);
+    if (priceHit) {
+      var seats = findSeats(text);
+      if (seats == null) seats = tierPick(text);
+      if (seats == null) seats = Number(slider.value);
+      var year = /year|annual|yearly|за год|солон|солона|годов/.test(text);
+      var month = /month|помесяч|ҳармоҳ|моҳона|ежемес/.test(text);
+      if (!year && !month) year = yearly;
+      if (month && !year) year = false;
+      return {
+        kind: "price",
+        parts: [{ type: "text", text: priceSentence(seats, year, quote(seats, year)) }],
+        apply: function () {
+          setSeats(seats);
+          setYearly(year);
+          var card = document.querySelector(".price-card");
+          if (!card) return;
+          card.classList.remove("is-hit");
+          void card.offsetWidth;
+          card.classList.add("is-hit");
+          setTimeout(function () { card.classList.remove("is-hit"); }, 900);
+        }
+      };
+    }
+    var recipe = null;
+    var r;
+    for (r = 0; r < RECIPES.length; r += 1) {
+      if (RECIPES[r].test.test(text)) { recipe = RECIPES[r]; break; }
+    }
+    var wantsCode = /write|code|function|напиш|навис|функц|код|скрипт|draft|наброса|компонент/.test(text);
+    if (!recipe && wantsCode) recipe = genericCode(raw);
+    if (recipe) {
+      var note = recipe.note[lang] || recipe.note.en;
+      return { kind: "code", parts: [{ type: "text", text: note }, { type: "code", file: recipe.file, text: recipe.code }] };
+    }
+    var noteKey = matchNote(text);
+    if (noteKey) return { kind: "note", parts: [{ type: "text", text: t(noteKey) }] };
+    var fallback = lang === "ru"
+      ? "Могу посчитать команду, написать функцию или рассказать про оплату, редакторы и обучение. Например: «8 мест за год» или «напиши debounce»."
+      : lang === "tj"
+        ? "Метавонам дастаро ҳисоб кунам, функсия нависам ё дар бораи пардохт ва муҳаррирҳо гӯям. Масалан: «8 ҷой солона» ё «дебаунс нависед»."
+        : "I can price a team, write a function, or explain billing, editors, and training. Try “8 seats yearly” or “write a debounce”.";
+    return { kind: "note", parts: [{ type: "text", text: fallback }] };
+  }
+
+  function addBubble(role, parts) {
+    var box = document.createElement("div");
+    box.className = "msg msg-" + role;
+    parts.forEach(function (part) {
+      if (part.type === "code") {
+        var card = document.createElement("div");
+        card.className = "code-card";
+        var bar = document.createElement("div");
+        bar.className = "code-bar";
+        var name = document.createElement("span");
+        name.textContent = part.file;
+        var copy = document.createElement("button");
+        copy.type = "button";
+        copy.className = "text-btn";
+        copy.textContent = t("agent.copy");
+        copy.addEventListener("click", function () {
+          var done = function () { copy.textContent = t("agent.copied"); };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(part.text).then(done).catch(done);
+          } else done();
+        });
+        bar.appendChild(name);
+        bar.appendChild(copy);
+        var pre = document.createElement("pre");
+        var code = document.createElement("code");
+        code.textContent = part.text;
+        pre.appendChild(code);
+        card.appendChild(bar);
+        card.appendChild(pre);
+        box.appendChild(card);
+      } else {
+        var p = document.createElement("p");
+        p.textContent = part.text;
+        box.appendChild(p);
+      }
+    });
+    agentLog.appendChild(box);
+    agentLog.scrollTop = agentLog.scrollHeight;
+    return box;
+  }
+
+  function playAnswer(result) {
+    agentBusy = true;
+    agentSend.disabled = true;
+    var hold = document.createElement("div");
+    hold.className = "msg msg-agent";
+    var steps = stepsFor(result.kind);
+    agentLog.appendChild(hold);
+    var i = 0;
+    function frame() {
+      var ol = document.createElement("ol");
+      ol.className = "agent-steps";
+      steps.forEach(function (label, idx) {
+        var li = document.createElement("li");
+        li.textContent = (idx < i ? "✓ " : "· ") + label;
+        if (idx < i) li.className = "is-done";
+        else if (idx === i) li.className = "is-now";
+        ol.appendChild(li);
+      });
+      hold.replaceChildren(ol);
+      agentLog.scrollTop = agentLog.scrollHeight;
+      if (i < steps.length) {
+        i += 1;
+        if (reduce) frame();
+        else setTimeout(frame, 380);
+        return;
+      }
+      setTimeout(function () {
+        hold.remove();
+        if (result.apply) result.apply();
+        addBubble("agent", result.parts);
+        agentBusy = false;
+        agentSend.disabled = false;
+      }, reduce ? 0 : 240);
+    }
+    frame();
+  }
+
+  function ask(raw) {
+    var text = String(raw || "").trim();
+    if (!text || agentBusy) return;
+    addBubble("user", [{ type: "text", text: text }]);
+    agentInput.value = "";
+    if (!agentVisible) {
+      document.getElementById("agent").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    }
+    playAnswer(buildAnswer(text));
+  }
+
+  function renderAgentSuggest() {
+    var box = document.getElementById("agent-suggest");
+    if (!box) return;
+    box.replaceChildren();
+    ["q1", "q2", "q3"].forEach(function (key) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "chip";
+      btn.setAttribute("data-ask-key", key);
+      btn.textContent = t("agent." + key);
+      box.appendChild(btn);
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-ask-key]");
+    if (!btn) return;
+    ask(t("agent." + btn.getAttribute("data-ask-key")));
+  });
+
+  document.getElementById("agent-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    ask(agentInput.value);
+  });
+
+  document.getElementById("agent-fab").addEventListener("click", function () {
+    document.getElementById("agent").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    agentInput.focus();
+  });
+
+  new IntersectionObserver(function (entries) {
+    agentVisible = entries[0].isIntersecting;
+    document.getElementById("agent-fab").hidden = agentVisible;
+  }, { threshold: 0.28 }).observe(document.getElementById("agent"));
+
+  function greetAgent() {
+    if (agentGreeted) return;
+    agentGreeted = true;
+    var hello = lang === "ru"
+      ? "Я локальный агент Aether. Спросите цену, функцию или как устроены редакторы и оплата."
+      : lang === "tj"
+        ? "Ман агенти маҳаллии Aether ҳастам. Нарх, функсия ё муҳарриру пардохтро пурсед."
+        : "I’m the local Aether agent. Ask for a price, a function, or how editors and billing work.";
+    addBubble("agent", [{ type: "text", text: hello }]);
+  }
+
   applyI18n();
   setSeats(8);
   setYearly(false);
   show(0, !reduce);
+  greetAgent();
 })();
