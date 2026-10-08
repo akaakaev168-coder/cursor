@@ -717,6 +717,136 @@ kbd {
 .form-msg.ok { color: var(--mint); }
 .form-msg.err { color: var(--danger); }
 
+.cmd-ask {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--mint);
+  font: inherit;
+  text-align: left;
+}
+.cmd-ask:hover { text-decoration: underline; }
+
+.agent-layout { display: grid; gap: 22px; }
+.agent-picks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.agent-dock {
+  display: flex;
+  flex-direction: column;
+  min-height: 460px;
+  max-height: 640px;
+  border-radius: 24px;
+  border: 1px solid rgba(92, 255, 193, 0.35);
+  background:
+    radial-gradient(420px 180px at 100% 0%, rgba(155, 140, 255, 0.16), transparent 55%),
+    #0b0e16;
+  box-shadow: 0 0 70px rgba(92, 255, 193, 0.08), var(--shadow);
+  overflow: hidden;
+}
+.agent-head, .agent-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.agent-form { border-bottom: 0; border-top: 1px solid var(--line); }
+.agent-mode {
+  margin-left: auto;
+  font-family: var(--font-m);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mint);
+}
+.agent-log {
+  flex: 1;
+  overflow: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 220px;
+}
+.msg {
+  max-width: 94%;
+  border-radius: 16px;
+  padding: 10px 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+.msg-user {
+  align-self: flex-end;
+  background: rgba(155, 140, 255, 0.16);
+  border: 1px solid rgba(155, 140, 255, 0.35);
+}
+.msg-agent {
+  align-self: flex-start;
+  background: rgba(92, 255, 193, 0.06);
+  border: 1px solid rgba(92, 255, 193, 0.22);
+}
+.msg p { margin: 0; white-space: pre-wrap; }
+.msg p + p { margin-top: 8px; }
+.code-card {
+  margin-top: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #07080d;
+  overflow: hidden;
+}
+.code-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-m);
+  font-size: 11px;
+  color: var(--mint);
+}
+.code-card pre {
+  margin: 0;
+  padding: 10px 12px;
+  overflow: auto;
+  font-family: var(--font-m);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.agent-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.agent-steps li { font-family: var(--font-m); font-size: 12px; color: #667; }
+.agent-steps li.is-done { color: var(--mint); }
+.agent-steps li.is-now { color: var(--ink); }
+.suggest { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 14px 12px; }
+.agent-form input {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0 12px;
+  font-size: 16px;
+}
+.agent-fab {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 35;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f3fff9, var(--mint) 42%, #1ad99a);
+  color: #04281c;
+  font-weight: 800;
+  box-shadow: 0 12px 40px rgba(92, 255, 193, 0.28);
+}
+.agent-fab[hidden] { display: none; }
+.price-card.is-hit { box-shadow: 0 0 0 1px var(--mint), 0 0 40px rgba(92, 255, 193, 0.35); }
+
 .footer { position: relative; z-index: 1; border-top: 1px solid var(--line); padding: 36px 0 48px; }
 .foot-grid { display: grid; gap: 22px; }
 .foot-grid a { display: block; color: var(--muted); padding: 4px 0; }
@@ -745,6 +875,8 @@ kbd {
   .price-controls { grid-column: 1; }
   .price-card { grid-column: 2; grid-row: 1 / span 2; position: sticky; top: 96px; }
   .features-layout { grid-template-columns: 300px 1fr; gap: 22px; align-items: start; }
+  .agent-layout { grid-template-columns: 0.82fr 1.18fr; align-items: start; gap: 32px; }
+  .agent-dock { position: sticky; top: 96px; }
   .tablist { flex-direction: column; overflow: visible; }
   .tab { width: 100%; }
   .foot-grid { grid-template-columns: 1.4fr 1fr 1fr; }
